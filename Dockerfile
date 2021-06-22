@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM openjdk:8-jdk-alpine
 
 ARG BUILD_DATE
 ARG VCS_REF

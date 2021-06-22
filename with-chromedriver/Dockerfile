@@ -1,5 +1,4 @@
-FROM zenika/alpine-chrome
-
+FROM soloking/jdk8-with-chrome
 USER root
 RUN apk add --no-cache chromium-chromedriver
 USER chrome

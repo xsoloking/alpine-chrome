@@ -29,6 +29,9 @@ RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
     && chown -R chrome:chrome /usr/src/app
 # Run Chrome as non-privileged
+
+RUN apk add --no-cache chromium-chromedriver
+
 USER chrome
 WORKDIR /usr/src/app
 
@@ -36,4 +39,4 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/
 
 # Autorun chrome headless
-ENTRYPOINT ["chromium-browser", "--headless", "--use-gl=swiftshader", "--disable-software-rasterizer", "--disable-dev-shm-usage"]
+ENTRYPOINT ["chromedriver","--whitelisted-ips"]
